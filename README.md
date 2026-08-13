@@ -101,35 +101,15 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 ## 📊 Visualizations Highlights
 
-* **Figure 1 (Boxplot Outlier Isolation):** Box plot isolating the 3 voice memo outliers with exact 0 popularity.  
-  <br>
-  <p align="center">
-    <img src="Figure1.png" width="65%" alt="Figure 1: Boxplot Outlier Isolation">
-  </p>
+| Figure 1: Boxplot Outlier Isolation | Figure 3: Standardized OLS Coefficients |
+| :---: | :---: |
+| ![Figure 1](Figure1.png) | ![Figure 3](Figure3.png) |
+| *Box plot isolating 3 voice memo outliers with 0 popularity.* | *Bar chart detailing feature weights in stabilized OLS (+12.20 release_year).* |
 
-* **Figure 2 (Song Popularity by Album Family):** Box plot illustrating internal popularity dispersion across 12 engineered album families.  
-  <br>
-  <p align="center">
-    <img src="Figure2.png" width="75%" alt="Figure 2: Song Popularity by Album Family">
-  </p>
-
-* **Figure 3 (Standardized Linear Coefficients):** Bar chart detailing feature weightings in the stabilized OLS model, highlighting the release_year (+12.20) dominance.  
-  <br>
-  <p align="center">
-    <img src="Figure3.png" width="75%" alt="Figure 3: Standardized Linear Coefficients">
-  </p>
-
-* **Figure 4 (Feature Importance Comparison):** Bar chart showing feature importance across Random Forest and Gradient Boosting, highlighting release_year dominance (~70%).  
-  <br>
-  <p align="center">
-    <img src="Figure4.png" width="75%" alt="Figure 4: Feature Importance Comparison">
-  </p>
-
-* **Figure 5 (Predictive Variance Collapse):** Empirical proof comparing actual song standard deviation against flattened tree ensemble predictions in X_test.  
-  <br>
-  <p align="center">
-    <img src="Figure5.png" width="75%" alt="Figure 5: Predictive Variance Collapse">
-  </p>
+| Figure 4: Feature Importance Comparison | Figure 5: Predictive Variance Collapse |
+| :---: | :---: |
+| ![Figure 4](Figure4.png) | ![Figure 5](Figure5.png) |
+| *Feature importance across RF and GB (~70% release_year).* | *Empirical proof comparing actual song variance against flattened predictions.* |
 ---
 
 ## 🛠️ Tech Stack & Dependencies

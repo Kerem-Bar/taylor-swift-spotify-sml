@@ -130,16 +130,19 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 ## 🚀 How to Execute the Pipeline
 
-For detailed execution paths, dependencies, and environment configuration, refer to the included **`Code & Data Execution Guide.pdf`**.
+For detailed execution paths, dependencies, and environment configuration, refer to the included `Code & Data Execution Guide.pdf`.
 
-1. **Clone the repository:**
-   git clone https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git
+```bash
+# 1. Clone the repository
+git clone [https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git](https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git)
 
-2. **Execute Full Lifecycle & Generate Datasets:**
-   python Taylor_swift_smlproject.py[cite: 1]
+# 2. Execute Full Lifecycle & Generate Preprocessed Datasets
+# (Executes cleaning, feature extraction, and saves taylor_swift_spotify.csv, taylor_baseline.csv, and taylor_improved.csv)
+python Taylor_swift_smlproject.py
 
-3. **Run Winning Models & Reproduce Benchmark Figures:**
-   python winning_models_sml2.py[cite: 1]
+# 3. Run Winning Models & Reproduce Benchmark Figures
+# (Trains OLS, Random Forest, Gradient Boosting and generates Figures 1-5)
+python winning_models_sml2.py
 
 ---
 

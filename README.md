@@ -143,11 +143,9 @@ python Taylor_swift_smlproject.py
 # 3. Run Winning Models & Reproduce Benchmark Figures
 # (Trains OLS, Random Forest, Gradient Boosting and generates Figures 1-5)
 python winning_models_sml2.py
----
-
----
 
 ## 👤 Author
 
 **Kerem Bar**  
 Master's Student in Information Sciences (Information Technology Specialization)
+---

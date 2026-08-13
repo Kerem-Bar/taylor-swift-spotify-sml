@@ -101,15 +101,30 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 ## 📊 Visualizations Highlights
 
-| Figure 1: Boxplot Outlier Isolation | Figure 3: Standardized OLS Coefficients |
-| :---: | :---: |
-| ![Figure 1](Figure1.png) | ![Figure 3](Figure3.png) |
-| *Box plot isolating 3 voice memo outliers with 0 popularity.* | *Bar chart detailing feature weights in stabilized OLS (+12.20 release_year).* |
+* **Figure 1 (Boxplot Outlier Isolation):** Box plot isolating 3 voice memo outliers with 0 popularity.
+<p align="center">
+  <img src="Figure1.png" height="280" alt="Figure 1: Boxplot Outlier Isolation">
+</p>
 
-| Figure 4: Feature Importance Comparison | Figure 5: Predictive Variance Collapse |
-| :---: | :---: |
-| ![Figure 4](Figure4.png) | ![Figure 5](Figure5.png) |
-| *Feature importance across RF and GB (~70% release_year).* | *Empirical proof comparing actual song variance against flattened predictions.* |
+* **Figure 2 (Song Popularity by Album Family):** Box plot illustrating internal popularity dispersion across 12 engineered album families.
+<p align="center">
+  <img src="Figure2.png" height="280" alt="Figure 2: Popularity Distribution by Album Family">
+</p>
+
+* **Figure 3 (Standardized OLS Coefficients):** Bar chart detailing feature weightings in the stabilized OLS model (+12.20 release_year).
+<p align="center">
+  <img src="Figure3.png" height="280" alt="Figure 3: Standardized OLS Coefficients">
+</p>
+
+* **Figure 4 (Feature Importance Comparison):** Bar chart showing feature importance across Random Forest and Gradient Boosting (~70% release_year).
+<p align="center">
+  <img src="Figure4.png" height="280" alt="Figure 4: Feature Importance Comparison">
+</p>
+
+* **Figure 5 (Predictive Variance Collapse):** Empirical proof comparing actual song standard deviation against flattened tree predictions in X_test.
+<p align="center">
+  <img src="Figure5.png" height="280" alt="Figure 5: Predictive Variance Collapse">
+</p>
 ---
 
 ## 🛠️ Tech Stack & Dependencies

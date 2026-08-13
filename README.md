@@ -102,20 +102,34 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 ## 📊 Visualizations Highlights
 
 * **Figure 1 (Boxplot Outlier Isolation):** Box plot isolating the 3 voice memo outliers with exact 0 popularity.  
-  ![Figure 1: Boxplot Outlier Isolation](Figure1.png)
+  <br>
+  <p align="center">
+    <img src="Figure1.png" width="65%" alt="Figure 1: Boxplot Outlier Isolation">
+  </p>
 
 * **Figure 2 (Song Popularity by Album Family):** Box plot illustrating internal popularity dispersion across 12 engineered album families.  
-  ![Figure 2: Song Popularity by Album Family](Figure2.png)
+  <br>
+  <p align="center">
+    <img src="Figure2.png" width="75%" alt="Figure 2: Song Popularity by Album Family">
+  </p>
 
 * **Figure 3 (Standardized Linear Coefficients):** Bar chart detailing feature weightings in the stabilized OLS model, highlighting the release_year (+12.20) dominance.  
-  ![Figure 3: Standardized Linear Coefficients](Figure3.png)
+  <br>
+  <p align="center">
+    <img src="Figure3.png" width="75%" alt="Figure 3: Standardized Linear Coefficients">
+  </p>
 
 * **Figure 4 (Feature Importance Comparison):** Bar chart showing feature importance across Random Forest and Gradient Boosting, highlighting release_year dominance (~70%).  
-  ![Figure 4: Feature Importance Comparison](Figure4.png)
+  <br>
+  <p align="center">
+    <img src="Figure4.png" width="75%" alt="Figure 4: Feature Importance Comparison">
+  </p>
 
 * **Figure 5 (Predictive Variance Collapse):** Empirical proof comparing actual song standard deviation against flattened tree ensemble predictions in X_test.  
-  ![Figure 5: Predictive Variance Collapse](Figure5.png)
-
+  <br>
+  <p align="center">
+    <img src="Figure5.png" width="75%" alt="Figure 5: Predictive Variance Collapse">
+  </p>
 ---
 
 ## 🛠️ Tech Stack & Dependencies

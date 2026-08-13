@@ -103,21 +103,17 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 | Figure 1: Boxplot Outlier Isolation | Figure 2: Popularity by Album Family |
 | :---: | :---: |
-| ![Figure 1](Figure1.png) | ![Figure 2](Figure2.png) |
+| <img src="Figure1.png" width="100%"> | <img src="Figure2.png" width="85%"> |
 | *Box plot isolating 3 voice memo outliers with 0 popularity.* | *Box plot illustrating popularity dispersion across album families.* |
-
-<br>
 
 | Figure 3: Standardized OLS Coefficients | Figure 4: Feature Importance Comparison |
 | :---: | :---: |
-| ![Figure 3](Figure3.png) | ![Figure 4](Figure4.png) |
+| <img src="Figure3.png" width="90%"> | <img src="Figure4.png" width="90%"> |
 | *Feature weights in stabilized OLS (+12.20 release_year).* | *Feature importance across RF and GB (~70% release_year).* |
-
-<br>
 
 | Figure 5: Predictive Variance Collapse |
 | :---: |
-| ![Figure 5](Figure5.png) |
+| <img src="Figure5.png" width="75%"> |
 | *Empirical proof comparing actual song variance against flattened predictions in X_test.* |
 ---
 

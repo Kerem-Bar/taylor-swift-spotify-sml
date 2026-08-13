@@ -101,30 +101,24 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 ## 📊 Visualizations Highlights
 
-* **Figure 1 (Boxplot Outlier Isolation):** Box plot isolating 3 voice memo outliers with 0 popularity.
-<p align="center">
-  <img src="Figure1.png" width="70%" style="border: 1px solid #d0d7de; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 6px;" alt="Figure 1">
-</p>
+| Figure 1: Boxplot Outlier Isolation | Figure 2: Popularity by Album Family |
+| :---: | :---: |
+| ![Figure 1](Figure1.png) | ![Figure 2](Figure2.png) |
+| *Box plot isolating 3 voice memo outliers with 0 popularity.* | *Box plot illustrating popularity dispersion across album families.* |
 
-* **Figure 2 (Song Popularity by Album Family):** Box plot illustrating internal popularity dispersion across 12 engineered album families.
-<p align="center">
-  <img src="Figure2.png" width="80%" style="border: 1px solid #d0d7de; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 6px;" alt="Figure 2">
-</p>
+<br>
 
-* **Figure 3 (Standardized OLS Coefficients):** Bar chart detailing feature weightings in the stabilized OLS model (+12.20 release_year).
-<p align="center">
-  <img src="Figure3.png" width="80%" style="border: 1px solid #d0d7de; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 6px;" alt="Figure 3">
-</p>
+| Figure 3: Standardized OLS Coefficients | Figure 4: Feature Importance Comparison |
+| :---: | :---: |
+| ![Figure 3](Figure3.png) | ![Figure 4](Figure4.png) |
+| *Feature weights in stabilized OLS (+12.20 release_year).* | *Feature importance across RF and GB (~70% release_year).* |
 
-* **Figure 4 (Feature Importance Comparison):** Bar chart showing feature importance across Random Forest and Gradient Boosting (~70% release_year).
-<p align="center">
-  <img src="Figure4.png" width="80%" style="border: 1px solid #d0d7de; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 6px;" alt="Figure 4">
-</p>
+<br>
 
-* **Figure 5 (Predictive Variance Collapse):** Empirical proof comparing actual song standard deviation against flattened tree predictions in X_test.
-<p align="center">
-  <img src="Figure5.png" width="85%" style="border: 1px solid #d0d7de; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 6px;" alt="Figure 5">
-</p>
+| Figure 5: Predictive Variance Collapse |
+| :---: |
+| ![Figure 5](Figure5.png) |
+| *Empirical proof comparing actual song variance against flattened predictions in X_test.* |
 ---
 
 ## 🛠️ Tech Stack & Dependencies

@@ -37,8 +37,8 @@ taylor-swift-spotify-sml/
 
 To establish a stable and mathematically sound predictive environment across a multi-era discography, the preprocessing pipeline executed four structural engineering steps:
 
-### 1. Outlier Isolation & Dataset Finalization (Figure 1)
-Exploratory IQR analysis on the raw dataset (N = 582) established a mathematical lower fence at 7.5 popularity points. Exactly 3 records fell below this threshold with a popularity score of 0. Targeted inspection confirmed these entries were non-musical voice memos from 1989 (Deluxe Edition). To eliminate structural noise and stabilize modeling variance, a deterministic filter (`popularity > 0`) was applied, finalizing a clean modeling space of N = 579 musical tracks.
+### 1. Outlier Isolation & Dataset Finalization (Figure 1 & Figure 2)
+Exploratory IQR analysis on the raw dataset (N = 582) established a mathematical lower fence at 7.5 popularity points. Exactly 3 records fell below this threshold with a popularity score of 0. Targeted inspection confirmed these entries were non-musical voice memos from 1989 (Deluxe Edition). To eliminate structural noise and stabilize modeling variance, a deterministic filter (`popularity > 0`) was applied, finalizing a clean modeling space of N = 579 musical tracks. Furthermore, visualizing popularity across album families (Figure 2) highlighted contrasting internal popularity profiles—ranging from high-popularity compressed tiers (TTPD) to wide vertical dispersion (reputation).
 
 ### 2. Chronological Feature Extraction & Conceptual Substitution
 To enable text-based release dates for numeric regression estimators, four-character slicing extracted the calendar year into `release_year`. To bypass the curse of dimensionality and zero-variance training constraints caused by categorical dummy indicators in out-of-sample splits, explicit album identities were proactively replaced with continuous structural features (`release_year`, `track_number`, `duration_ms`) to capture temporal and layout context natively.

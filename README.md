@@ -15,6 +15,7 @@ Traditional commercial music forecasting frequently relies on isolated audio des
 
 ## 📁 Repository Structure
 
+```text
 taylor-swift-spotify-sml/
 │
 ├── Taylor_swift_smlproject.py # Initial Data Science Lifecycle, Exploratory Baselines & CSV Export
@@ -29,7 +30,6 @@ taylor-swift-spotify-sml/
 ├── Figure4.png                # Feature Importance of Both Tree Ensemble Models
 ├── Figure5.png                # Empirical Evidence of Predictive Variance Collapse
 └── README.md                  # Detailed Repository Architecture & Research Findings
-
 ---
 
 ## 🛠️ Data Preprocessing & Leak-Free Architecture

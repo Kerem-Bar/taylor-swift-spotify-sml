@@ -101,9 +101,9 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 ## 📊 Visualizations Highlights
 
-| Figure 1: Boxplot Outlier Isolation | Figure 2: Popularity by Album Family |
+| <div style="width: 280px">Figure 1: Boxplot Outlier Isolation</div> | Figure 2: Popularity by Album Family |
 | :---: | :---: |
-| <img src="Figure1.png" width="85%"> | <img src="Figure2.png" width="100%"> |
+| <img src="Figure1.png" width="100%"> | <img src="Figure2.png" width="80%"> |
 | *Box plot isolating 3 voice memo outliers with 0 popularity.* | *Box plot illustrating popularity dispersion across album families.* |
 
 | Figure 3: Standardized OLS Coefficients | Figure 4: Feature Importance Comparison |

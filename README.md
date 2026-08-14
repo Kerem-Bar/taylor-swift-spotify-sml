@@ -7,17 +7,16 @@ An empirical Supervised Machine Learning (SML) research pipeline evaluating the 
 
 ## 📌 Project Overview & Feature Architecture
 
-Traditional commercial music forecasting frequently relies on isolated audio descriptors without contextual positioning. This study formulates track popularity forecasting ($Y \in [0, 100]$) as a supervised machine learning regression task over Taylor Swift's discography ($N = 579$), sourced from the Spotify API via Kaggle. To capture extreme stylistic variance across a two-decade span, Taylor Swift's extensive catalog is utilized as the primary analytical case study.
+Traditional commercial music forecasting frequently relies on isolated audio descriptors without contextual positioning. This study formulates track popularity forecasting ($Y \in [0, 100]$) as a supervised machine learning regression task over Taylor Swift's extensive discography ($N = 579$), utilizing her substantial stylistic variance across two decades as a primary analytical case study.
 
-The predictive framework evaluates an independent feature matrix ($X$) of 12 numeric predictors partitioned into two functional categories:
+The predictive framework models a continuous target variable against an independent feature matrix ($X$) of 12 numeric predictors partitioned into two functional categories:
 
 * **Nine Intrinsic Acoustic Features:** `acousticness`, `danceability`, `energy`, `instrumentalness`, `liveness`, `loudness`, `speechiness`, `tempo`, and `valence`.
 * **Three Structural-Conceptual Features:**
   * `track_number`: Album sequential position.
   * `duration_ms`: Track length in milliseconds.
   * `release_year`: Calendar year of release.
-
----
+  ---
 
 ## 🔬 Core Research Questions
 

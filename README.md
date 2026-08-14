@@ -76,12 +76,12 @@ Following partitioning, Z-score standardization was fitted strictly on X_train a
 
 To assess potential variance inflation and high correlation among acoustic predictors, specifically between `energy` and `loudness`, the parametric Ordinary Least Squares (OLS) baseline was estimated under two specifications:
 
-1. **Linear Regression (Full):** Incorporating all 12 acoustic and structural predictors (Includes Energy).
-2. **Linear Regression (Stabilized):** Isolating the impact of collinearity by omitting the `energy` parameter (Excludes Energy).
+1. **Linear Regression (Full):** Incorporating all 12 acoustic and structural predictors (Includes `energy`).
+2. **Linear Regression (Stabilized):** Isolating the impact of collinearity by omitting the `energy` parameter (Excludes `energy`).
 
 Consequently, the stabilized OLS specification demonstrated superior parameter stability and generalization, establishing it as the winning linear benchmark against the non-parametric tree ensembles (Random Forest and Gradient Boosting).
 
-Three regression architectures were evaluated across identical partition splits (X_train vs. X_test). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to prevent severe training data over-memorization.
+Across the three core regression architectures, four experimental specifications were evaluated across identical partition splits (`X_train` vs. `X_test`). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to prevent severe training data over-memorization.
 | Model Architecture | Feature Configuration | Train RMSE | Test RMSE | Train R² | Test R² | Diagnostic Status |
 | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
 | **Linear Regression (Full)** | 12 Features (Includes `energy`) | 11.4240 | 10.8603 | 0.5595 | -0.1536 | Severe Multicollinearity Damage |

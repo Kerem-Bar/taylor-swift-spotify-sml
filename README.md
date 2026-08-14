@@ -14,9 +14,14 @@ Traditional commercial music forecasting frequently relies on isolated audio des
   * `track_number`: Album sequential position.
   * `duration_ms`: Track length in milliseconds.
   * `release_year`: Calendar year of release.
-### 🔬 Core Research Questions
-* **RQ1 (Predictive Capacity):** Can supervised machine learning architectures accurately predict individual song popularity based on a combined acoustic-conceptual feature matrix?
-* **RQ2 (Industry Generalizability):** To what extent can an artist-specific predictive framework successfully generalize across the broader music industry?
+    
+---
+
+## 🔬 Core Research Questions
+
+* **RQ1 (Predictive Capacity):** Can supervised machine learning architectures accurately predict individual song popularity based on a combined acoustic and conceptual feature matrix?
+* **RQ2 (Generalizability):** To what extent can an artist-specific predictive framework successfully generalize across the broader music industry?
+
 
 ---
 

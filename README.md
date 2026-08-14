@@ -19,8 +19,14 @@ Traditional commercial music forecasting frequently relies on isolated audio des
 
 ## 🔬 Core Research Questions
 
-* **RQ1 (Predictive Capacity):** Can supervised machine learning architectures accurately predict individual song popularity based on a combined acoustic and conceptual feature matrix?
-* **RQ2 (Generalizability):** To what extent can an artist-specific predictive framework successfully generalize across the broader music industry?
+## 🔬 Core Research Questions
+
+This study evaluates two central research questions:
+* **RQ1 (Predictive Capacity):** Can supervised machine learning architectures accurately predict individual song popularity based on a combined acoustic-conceptual feature matrix?
+* **RQ2 (Generalizability):** To what extent can an artist-specific framework successfully generalize across the broader music industry?
+
+To capture extreme stylistic variance across a two-decade span, Taylor Swift's extensive discography is utilized as the primary analytical case study.
+
 
 
 ---

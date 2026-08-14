@@ -81,6 +81,8 @@ To assess potential variance inflation and high correlation among acoustic predi
 
 Consequently, the stabilized OLS specification demonstrated superior parameter stability and generalization, establishing it as the winning linear benchmark against the non-parametric tree ensembles (Random Forest and Gradient Boosting).
 
+### 🏆 Empirical Benchmark Results & Specification Comparison
+
 Across the three core regression architectures, four experimental specifications were evaluated across identical partition splits (`X_train` vs. `X_test`). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to prevent severe training data over-memorization.
 | Model Architecture | Feature Configuration | Train RMSE | Test RMSE | Train R² | Test R² | Diagnostic Status |
 | :--- | :--- | :---: | :---: | :---: | :---: | :--- |

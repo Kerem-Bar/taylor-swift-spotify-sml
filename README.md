@@ -7,25 +7,24 @@ An empirical Supervised Machine Learning (SML) research pipeline evaluating the 
 
 ## 📌 Project Overview & Feature Architecture
 
-Traditional commercial music forecasting frequently relies on isolated audio descriptors without contextual positioning. This study formulates track popularity forecasting ($Y \in [0, 100]$) as a supervised machine learning regression task over Taylor Swift's discography ($N = 579$), sourced from the Spotify API via Kaggle. The predictive framework evaluates an independent feature matrix ($X$) of 12 numeric predictors partitioned into two functional categories:
+Traditional commercial music forecasting frequently relies on isolated audio descriptors without contextual positioning. This study formulates track popularity forecasting ($Y \in [0, 100]$) as a supervised machine learning regression task over Taylor Swift's discography ($N = 579$), sourced from the Spotify API via Kaggle. To capture extreme stylistic variance across a two-decade span, Taylor Swift's extensive catalog is utilized as the primary analytical case study.
+
+The predictive framework evaluates an independent feature matrix ($X$) of 12 numeric predictors partitioned into two functional categories:
 
 * **Nine Intrinsic Acoustic Features:** `acousticness`, `danceability`, `energy`, `instrumentalness`, `liveness`, `loudness`, `speechiness`, `tempo`, and `valence`.
 * **Three Structural-Conceptual Features:**
   * `track_number`: Album sequential position.
   * `duration_ms`: Track length in milliseconds.
   * `release_year`: Calendar year of release.
-    
+
 ---
 
 ## 🔬 Core Research Questions
 
-## 🔬 Core Research Questions
-
-This study evaluates two central research questions:
 * **RQ1 (Predictive Capacity):** Can supervised machine learning architectures accurately predict individual song popularity based on a combined acoustic-conceptual feature matrix?
-* **RQ2 (Generalizability):** To what extent can an artist-specific framework successfully generalize across the broader music industry?
+* **RQ2 (Generalizability):** To what extent can an artist-specific predictive framework successfully generalize across the broader music industry?
 
-To capture extreme stylistic variance across a two-decade span, Taylor Swift's extensive discography is utilized as the primary analytical case study.
+
 
 
 

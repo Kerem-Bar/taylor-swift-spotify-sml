@@ -1,12 +1,12 @@
 # <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="30" height="30"> # Predicting Spotify Track Popularity: Supervised Regression Modeling of Audio and Structural Features
 
-An empirical Supervised Machine Learning (SML) research pipeline evaluating whether combined acoustic and structural features can forecast track popularity across digital streaming platforms. This repository benchmarks parametric Ordinary Least Squares (OLS) Linear Regression against non-parametric tree ensembles (Random Forest and Gradient Boosting Regressors), utilizing an out-of-sample album-family group partition to prevent data leakage from sonically identical catalog re-recordings.
+An empirical Supervised Machine Learning (SML) research pipeline evaluating the predictive capacity of combined acoustic and structural features across digital streaming platforms. This repository benchmarks parametric Ordinary Least Squares (OLS) Linear Regression against non-parametric tree ensembles (Random Forest and Gradient Boosting Regressors) using an era-isolated, leak-free validation architecture.
 
 ## 📌 Project Overview & Feature Architecture
 
-This study formulates track popularity forecasting (*Y* ∈ [0, 100]) as a supervised machine learning regression task over Taylor Swift's extensive discography (*N* = 579), utilizing her diverse two-decade career and broad stylistic variance across genres as an optimal analytical case study.
+Traditional music popularity forecasting frequently falls into an "Acoustic Isolation Trap", predicting commercial success strictly from raw audio signals while ignoring chronological and structural album context. To bridge this empirical gap, this study formulates track popularity forecasting (*Y* ∈ [0, 100]) as a supervised machine learning regression task over Taylor Swift's extensive discography (*N* = 579), utilizing her diverse two-decade career and stylistic shifts as an optimal case study.
 
-The predictive framework models a continuous target variable against an independent feature matrix (*X*) of 12 numeric predictors partitioned into two functional categories:
+The predictive framework models track popularity against an independent feature matrix (*X*) of 12 numeric predictors partitioned into two functional categories:
 
 * **Nine Intrinsic Acoustic Features:** `acousticness`, `danceability`, `energy`, `instrumentalness`, `liveness`, `loudness`, `speechiness`, `tempo`, and `valence`.
 * **Three Structural-Conceptual Features:**

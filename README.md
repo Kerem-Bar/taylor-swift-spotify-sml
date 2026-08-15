@@ -13,10 +13,6 @@ The predictive framework models a continuous target variable against an independ
   * `track_number`: Album sequential position.
   * `duration_ms`: Track length in milliseconds.
   * `release_year`: Calendar year of release.
-
-To maintain cross-partition stability under an era-isolated group split, explicit album dummy indicators were proactively replaced with continuous structural-conceptual features. This engineering decision eliminates zero-variance training constraints and high-dimensional noise while natively capturing the chronological era and layout environment of each musical work.
----
-
 ## 🔬 Core Research Questions
 
 * **RQ1 (Predictive Capacity):** Can supervised machine learning architectures accurately predict individual song popularity based on a combined acoustic-conceptual feature matrix?

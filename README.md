@@ -84,13 +84,12 @@ Consequently, the stabilized OLS specification demonstrated superior parameter s
 ### 🏆 Empirical Benchmark Results & Specification Comparison
 
 Across the three core regression architectures, four experimental specifications were evaluated across identical partition splits (`X_train` vs. `X_test`). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to prevent severe training data over-memorization.
-| Model Architecture | Feature Configuration | Train RMSE | Test RMSE | Train R² | Test R² | Diagnostic Status |
-| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| **Linear Regression (Full)** | 12 Features (Includes `energy`) | 11.4240 | 10.8603 | 0.5595 | -0.1536 | Severe Multicollinearity Damage |
-| **Linear Regression (Stabilized)** | 11 Features (Excludes `energy`) | 11.4302 | 10.7815 | 0.5590 | -0.1369 | Baseline Benchmark / Negative Generalization |
-| **Random Forest Regressor** | 12 Features (`max_depth=4`) | 7.6028 | 10.7317 | 0.8049 | -0.1264 | Predictive Variance Collapse |
-| **Gradient Boosting Regressor** | 12 Features (`max_depth=4`) | 3.2835 | 10.7190 | 0.9636 | -0.1238 | High Overfitting / Catalog Failure |
-
+| Model Architecture | Feature Configuration | Train RMSE | Test RMSE | Train $R^2$ | Test $R^2$ |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Linear Regression (Full)** | 12 Features (Includes `energy`) | 11.4240 | 10.8603 | 0.5595 | -0.1536 |
+| **Linear Regression (Stabilized)** | 11 Features (Excludes `energy`) | ... | ... | ... | ... |
+| **Random Forest Regressor** | Full Acoustic-Conceptual Matrix | ... | ... | ... | ... |
+| **Gradient Boosting Regressor** | Full Acoustic-Conceptual Matrix | ... | ... | ... | ... |
 ---
 
 ## 🔍 Diagnostic Analysis: The Predictive R² Collapse

@@ -1,23 +1,21 @@
-# <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="30" height="30"> Predicting Spotify Track Popularity: Supervised Regression Modeling of Audio and Structural Features
-An empirical Supervised Machine Learning (SML) research pipeline evaluating the predictive capacity of combined acoustic-conceptual feature matrices across Taylor Swift's Spotify catalog (N = 579). This repository addresses the traditional "Acoustic Isolation Trap", the analytical limitation of relying exclusively on intrinsic audio signals without contextual positioning, by benchmarking parametric Ordinary Least Squares (OLS) Linear Regression against non-parametric tree ensembles (Random Forest and Gradient Boosting Regressors) under a strict, leak-free validation architecture.
+# <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="30" height="30"> # Predicting Spotify Track Popularity: Supervised Regression Modeling of Audio and Structural Features
 
----
-
-
+An empirical Supervised Machine Learning (SML) research pipeline evaluating whether combined acoustic and structural features can forecast track popularity across digital streaming platforms. This repository benchmarks parametric Ordinary Least Squares (OLS) Linear Regression against non-parametric tree ensembles (Random Forest and Gradient Boosting Regressors), utilizing an out-of-sample album-family group partition to prevent data leakage from sonically identical catalog re-recordings.
 
 ## 📌 Project Overview & Feature Architecture
 
-Traditional commercial music forecasting frequently relies on isolated audio descriptors without contextual positioning. This study formulates track popularity forecasting (*Y* ∈ [0, 100]) as a supervised machine learning regression task over Taylor Swift's extensive discography (*N* = 579), utilizing her diverse two-decade career and broad stylistic variance across genres as an optimal analytical case study.
+This study formulates track popularity forecasting (*Y* ∈ [0, 100]) as a supervised machine learning regression task over Taylor Swift's extensive discography (*N* = 579), utilizing her diverse two-decade career and broad stylistic variance across genres as an optimal analytical case study.
 
 The predictive framework models a continuous target variable against an independent feature matrix (*X*) of 12 numeric predictors partitioned into two functional categories:
-
 
 * **Nine Intrinsic Acoustic Features:** `acousticness`, `danceability`, `energy`, `instrumentalness`, `liveness`, `loudness`, `speechiness`, `tempo`, and `valence`.
 * **Three Structural-Conceptual Features:**
   * `track_number`: Album sequential position.
   * `duration_ms`: Track length in milliseconds.
   * `release_year`: Calendar year of release.
-  ---
+
+To maintain cross-partition stability under an era-isolated group split, explicit album dummy indicators were proactively replaced with continuous structural-conceptual features. This engineering decision eliminates zero-variance training constraints and high-dimensional noise while natively capturing the chronological era and layout environment of each musical work.
+---
 
 ## 🔬 Core Research Questions
 

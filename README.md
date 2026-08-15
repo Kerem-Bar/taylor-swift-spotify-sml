@@ -86,10 +86,10 @@ Consequently, the stabilized OLS specification demonstrated superior parameter s
 Across the three core regression architectures, four experimental specifications were evaluated across identical partition splits (`X_train` vs. `X_test`). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to prevent severe training data over-memorization.
 | Model Architecture | Feature Configuration | Train RMSE | Test RMSE | Train $R^2$ | Test $R^2$ |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Linear Regression (Full)** | 12 Features (Includes `energy`) | 11.4240 | 10.8603 | 0.5595 | -0.1536 |
-| **Linear Regression (Stabilized)** | 11 Features (Excludes `energy`) | ... | ... | ... | ... |
-| **Random Forest Regressor** | Full Acoustic-Conceptual Matrix | ... | ... | ... | ... |
-| **Gradient Boosting Regressor** | Full Acoustic-Conceptual Matrix | ... | ... | ... | ... |
+| **Linear Regression (Full)** | Full 12 Features | 11.4240 | 10.8603 | 0.5595 | -0.1536 |
+| **Linear Regression (Stabilized)** | 11 Features (Excludes `energy`) | 11.4302 | 10.7815 | 0.5590 | -0.1369 |
+| **Random Forest Regressor** | Full 12 Features | 7.6028 | 10.7317 | 0.8049 | -0.1264 |
+| **Gradient Boosting Regressor** | Full 12 Features | 3.2835 | 10.7190 | 0.9636 | -0.1238 |
 ---
 
 ## 🔍 Diagnostic Analysis: The Predictive R² Collapse

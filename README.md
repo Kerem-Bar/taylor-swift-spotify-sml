@@ -73,12 +73,11 @@ The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under
 
 ### 4. Multicollinearity Diagnostic & Empirical Feature Pruning (Figure 3)
 
-Correlation analysis revealed a strong linear dependency between `energy` and `loudness` (*r* = 0.80). To evaluate its practical impact on linear modeling, the OLS regression was empirically tested both with and without `energy`. Removing `energy` stabilized coefficient estimation and resulted in superior predictive performance. Consequently, `energy` was omitted from the baseline linear model, while retained for tree ensemble architectures which naturally handle collinear inputs and non-linear interactions.
+To address potential variance inflation and high correlation among acoustic predictors (notably between `energy` and `loudness`, r = 0.80), the baseline OLS regression was empirically evaluated both with and without `energy`. Removing `energy` yielded a slight improvement in out-of-sample performance and stabilized coefficient estimation. Consequently, `energy` was excluded from the linear baseline while retained for tree ensemble architectures, which naturally handle collinear inputs and non-linear interactions.
 
 This distinction established two dedicated modeling matrices:
 * `taylor_baseline.csv`: Excludes `energy` for baseline linear regression benchmarking.
 * `taylor_improved.csv`: Retains the complete feature space for tree ensemble modeling.
-
 
 ### 5. Leak-Free Feature Standardization
 

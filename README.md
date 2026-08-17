@@ -52,13 +52,20 @@ To establish a stable and mathematically robust predictive environment across a 
 
 Exploratory IQR analysis on the raw dataset (*N* = 582) established a mathematical lower fence at 7.5 popularity points. Exactly 3 observations fell below this threshold with a continuous popularity score of 0. Targeted qualitative inspection confirmed these entries were non-musical voice memos from the *1989 (Deluxe Edition)*. To eliminate structural noise and stabilize modeling variance, a deterministic filter (`popularity > 0`) was applied, finalizing a clean modeling space of *N* = 579 musical tracks.
 
-### 2. Chronological Feature Extraction & Conceptual Substitution
-To enable text-based release dates for numeric regression estimators, four-character slicing extracted the calendar year into `release_year`. To bypass the curse of dimensionality and zero-variance training constraints caused by categorical dummy indicators in out-of-sample splits, explicit album identities were proactively replaced with continuous structural features (`release_year`, `track_number`, `duration_ms`) to capture temporal and layout context natively.
+### 2. Catalog Structuring & Leak-Free Group Partitioning (Figure 2)
 
-### 3. Leak-Free GroupSplit Validation Strategy
-Standard random splits cause severe representation leakage in music discographies, as original tracks and re-recorded editions share near-identical acoustic footprints. To eliminate cross-partition contamination from repeated tracks across album versions, an out-of-sample `GroupShuffleSplit` (80/20) was executed on engineered `album_families`. 
+To resolve severe data leakage caused by sonically identical entries across catalog re-recordings and expanded editions, individual release titles were consolidated into unified `album_family` entities (for example, consolidating the original, deluxe, and re-recorded releases of *1989* under a single `1989` album family). 
 
-> **Structural Example:** The engineered **1989 album family** combines the original 2014 release, the 2014 Deluxe edition, and the 2023 Taylor's Version re-recording. A standard random split would scatter these identical acoustic signatures across training and testing partitions. Applying an album-family GroupSplit completely isolated three full musical eras into the holdout test set (X_test): 1989 (comprising 2014 original and 2023 re-recording), folklore (2020), and evermore (comprising 2020 original and 2021 deluxe version).
+The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under an out-of-sample holdout strategy (80/20 train-test ratio). This guaranteed that entire unseen eras—comprising the `1989`, `folklore`, and `evermore` album families—were strictly isolated into `X_test`, ensuring the models were evaluated entirely on out-of-sample discographic contexts. This exact train-test partition (`X_train`, `X_test`, `y_train`, `y_test`) was held identical across all three benchmarked regression architectures to ensure strict comparative validity.
+
+### 3. Chronological Feature Extraction & Categorical Dummy Substitution
+
+Under strict group partitioning where target album families exist exclusively within `X_test`, traditional One-Hot / Dummy encoding fails mathematically. Because test-set album indicators contain only zeros across `X_train`, parametric models (OLS) cannot estimate a meaningful slope ($\beta = 0$) for unseen eras, while decision trees cannot form valid split criteria on zero-variance training columns. 
+
+To overcome this, categorical album indicators were substituted with continuous structural-conceptual features:
+* `release_year`: Encodes chronological progression and overarching production era.
+* `track_number`: Captures sequential album positioning and intentional track curation.
+* `duration_ms`: Captures track length and compositional scale.
 
 ### 4. Feature Standardization & Multicollinearity Management
 Following partitioning, Z-score standardization was fitted strictly on X_train and applied to transform X_test. Empirical correlation analysis revealed severe linear dependency between `energy` and `loudness` (r = 0.80). To prevent coefficient destabilization, `energy` was omitted exclusively from the OLS baseline (`taylor_baseline.csv`), whereas it was safely retained within tree architectures (`taylor_improved.csv`) which naturally tolerate collinear inputs.

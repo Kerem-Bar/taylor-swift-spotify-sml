@@ -71,13 +71,17 @@ The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under
   * `track_number`: Captures sequential curation, structural placement, and album pacing.
   * `duration_ms`: Represents compositional scale and track length.
 
-### 4. Multicollinearity Diagnostic & Matrix Pruning (Figure 3)
+### 4. Multicollinearity Diagnostic & Empirical Feature Pruning (Figure 3)
 
-Empirical correlation analysis revealed severe linear dependency between `energy` and `loudness` (*r* = 0.80). To prevent coefficient variance inflation and destabilization in linear modeling, `energy` was omitted exclusively from the OLS baseline feature matrix (`taylor_baseline.csv`). Conversely, `energy` was retained within the feature matrix for tree-based architectures (`taylor_improved.csv`), as non-parametric tree ensembles naturally tolerate collinear inputs and exploit non-linear interactions.
+Correlation analysis revealed a strong linear dependency between `energy` and `loudness` (*r* = 0.80). To evaluate its practical impact on linear modeling, the OLS regression was empirically tested both with and without `energy`. Removing `energy` stabilized coefficient estimation and resulted in superior predictive performance. Consequently, `energy` was omitted from the baseline linear model, while retained for tree ensemble architectures which naturally handle collinear inputs and non-linear interactions.
+
+This distinction established two dedicated modeling matrices:
+* `taylor_baseline.csv`: Excludes `energy` for baseline linear regression benchmarking.
+* `taylor_improved.csv`: Retains the complete feature space for tree ensemble modeling.
 
 ### 5. Leak-Free Feature Standardization
 
-To ensure numerical stability across gradient-based and distance-sensitive algorithms while strictly guarding against data leakage, $Z$-score standardization (`StandardScaler`) was fitted exclusively on `X_train`. The learned scaling parameters (mean and standard deviation) were subsequently used to transform `X_test`.
+Because raw features span vastly different numerical scales (e.g., `duration_ms` in hundreds of thousands versus audio features bounded between 0 and 1), standardizing features is essential to ensure stable OLS coefficient estimation and uniform feature weighting. To strictly prevent data leakage, $Z$-score standardization (`StandardScaler`) was fitted exclusively on `X_train`, and the resulting parameters (mean and standard deviation) were subsequently applied to transform `X_test`.
 
 ---
 

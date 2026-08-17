@@ -58,14 +58,18 @@ To resolve severe data leakage caused by sonically identical entries across cata
 
 The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under an out-of-sample holdout strategy (80/20 train-test ratio). This guaranteed that entire unseen eras—comprising the `1989`, `folklore`, and `evermore` album families, were strictly isolated into `X_test`, ensuring the models were evaluated entirely on out-of-sample discographic contexts. This exact train-test partition (`X_train`, `X_test`, `y_train`, `y_test`) was held identical across all three benchmarked regression architectures to ensure strict comparative validity.
 
-### 3. Chronological Feature Extraction & Categorical Encoding Substitution
+### 3. Chronological Feature Extraction & Categorical Dummy Substitution
 
-Under strict group partitioning where target album families exist exclusively within `X_test`, traditional One-Hot Encoding fails mathematically. Because test-set album indicators contain only zeros across `X_train`, parametric models (OLS) cannot estimate a meaningful slope ($\beta = 0$) for unseen eras, while decision trees cannot form valid split criteria on zero-variance training columns. 
+* **Temporal Feature Extraction (`release_date` → `release_year`):**
+  To represent chronological progression numerically, `release_year` was extracted from raw `release_date` strings as an integer feature.
 
-To overcome this, categorical album indicators were substituted with continuous structural-conceptual features:
-* `release_year`: Encodes chronological progression and overarching production era.
-* `track_number`: Captures sequential album positioning and intentional track curation.
-* `duration_ms`: Captures track length and compositional scale.
+* **Capturing Album-Family Context via Continuous Proxies:**
+  Under strict group partitioning, holdout album families exist exclusively within `X_test`. Applying One-Hot Encoding directly on `album_family` generates dummy columns with zero variance (all zeros) across `X_train`. Under these conditions, parametric models (OLS) cannot estimate valid coefficients ($\beta$), and decision trees cannot establish meaningful split criteria.
+
+  To preserve the album family essence without categorical breakdown, continuous features were utilized as generalized numeric proxies:
+  * `release_year`: Encodes the chronological era and historical production context of each album family.
+  * `track_number`: Captures sequential curation, structural placement, and album pacing.
+  * `duration_ms`: Represents compositional scale and track length.
 
 ### 4. Feature Standardization & Multicollinearity Management
 Following partitioning, Z-score standardization was fitted strictly on X_train and applied to transform X_test. Empirical correlation analysis revealed severe linear dependency between `energy` and `loudness` (r = 0.80). To prevent coefficient destabilization, `energy` was omitted exclusively from the OLS baseline (`taylor_baseline.csv`), whereas it was safely retained within tree architectures (`taylor_improved.csv`) which naturally tolerate collinear inputs.

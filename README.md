@@ -79,9 +79,10 @@ This distinction established two dedicated modeling matrices:
 * `taylor_baseline.csv`: Excludes `energy` for baseline linear regression benchmarking.
 * `taylor_improved.csv`: Retains the complete feature space for tree ensemble modeling.
 
+
 ### 5. Leak-Free Feature Standardization
 
-Raw features span vastly different numerical scales (e.g., `duration_ms` in hundreds of thousands versus audio features bounded between 0 and 1), thus standardizing features is essential to ensure stable OLS coefficient estimation and uniform feature weighting. To strictly prevent data leakage, $Z$-score standardization (`StandardScaler`) was fitted exclusively on `X_train`, and the resulting parameters (mean and standard deviation) were subsequently applied to transform `X_test`.
+Following the dataset split, Z-score standardization (`StandardScaler`) was applied across the modeling pipeline to align features with vastly different scales (such as `duration_ms` versus audio metrics bounded between 0 and 1). To strictly prevent data leakage, the scaler was fitted exclusively on `X_train`, and then used to transform both `X_train` and `X_test`.
 
 ---
 

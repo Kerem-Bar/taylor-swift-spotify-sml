@@ -64,7 +64,7 @@ The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under
   To represent chronological progression numerically, `release_year` was extracted from raw `release_date` strings as an integer feature.
 
 * **Capturing Album-Family Context via Continuous Proxies:**
-  Under strict group partitioning, holdout album families exist exclusively within `X_test`. Applying One-Hot Encoding directly on `album_family` generates dummy columns with zero variance (all zeros) across `X_train`. Under these conditions, parametric models (OLS) cannot estimate valid coefficients (beta), and decision trees cannot establish meaningful split criteria on zero-variance training columns.
+  Under strict group partitioning, holdout album families exist exclusively within `X_test`. Applying One-Hot Encoding directly on `album_family` generates dummy columns with zero variance (all zeros) across `X_train`. Under these conditions, parametric models (OLS) cannot estimate valid coefficients (β), and decision trees cannot establish meaningful split criteria on zero-variance training columns.
 
   To preserve the album family essence without categorical breakdown, continuous features were utilized as generalized numeric proxies:
   * `release_year`: Encodes the chronological era and historical production context of each album family.

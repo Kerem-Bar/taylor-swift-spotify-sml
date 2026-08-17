@@ -46,7 +46,7 @@ taylor-swift-spotify-sml/
 
 ## 📌 Data Preprocessing & Leak-Free Architecture
 
-To establish a stable and mathematically robust predictive environment across a multi-era discography, the preprocessing pipeline executes four structural engineering steps:
+To establish a stable and mathematically robust predictive environment across a multi-era discography, the preprocessing pipeline executes the following structural engineering steps:
 
 ### 1. Outlier Isolation & Dataset Finalization (Figure 1)
 

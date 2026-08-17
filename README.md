@@ -46,7 +46,7 @@ taylor-swift-spotify-sml/
 
 ## 📌 Data Preprocessing & Leak-Free Architecture
 
-To establish a stable and mathematically robust predictive environment across a multi-era discography, the preprocessing pipeline executes the following structural engineering steps:
+To establish a stable and mathematically robust predictive environment across a multi-era discography, the preprocessing pipeline executes five structural engineering steps:
 
 ### 1. Outlier Isolation & Dataset Finalization (Figure 1)
 
@@ -56,7 +56,7 @@ Exploratory IQR analysis on the raw dataset (*N* = 582) established a mathematic
 
 To resolve severe data leakage caused by sonically identical entries across catalog re-recordings and expanded editions, individual release titles were consolidated into unified `album_family` entities (for example, consolidating the original, deluxe, and re-recorded releases of *1989* under a single `1989` album family). 
 
-The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under an out-of-sample holdout strategy (80/20 train-test ratio). This guaranteed that entire unseen eras—comprising the `1989`, `folklore`, and `evermore` album families, were strictly isolated into `X_test`, ensuring the models were evaluated entirely on out-of-sample discographic contexts. This exact train-test partition (`X_train`, `X_test`, `y_train`, `y_test`) was held identical across all three benchmarked regression architectures to ensure strict comparative validity.
+The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under an out-of-sample holdout strategy (80/20 train-test ratio). This guaranteed that entire unseen eras—comprising the `1989`, `folklore`, and `evermore` album families—were strictly isolated into `X_test`, ensuring the models were evaluated entirely on out-of-sample discographic contexts. This exact train-test partition (`X_train`, `X_test`, `y_train`, `y_test`) was held identical across all three benchmarked regression architectures to ensure strict comparative validity.
 
 ### 3. Chronological Feature Extraction & Categorical Dummy Substitution
 
@@ -64,15 +64,20 @@ The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under
   To represent chronological progression numerically, `release_year` was extracted from raw `release_date` strings as an integer feature.
 
 * **Capturing Album-Family Context via Continuous Proxies:**
-  Under strict group partitioning, holdout album families exist exclusively within `X_test`. Applying One-Hot Encoding directly on `album_family` generates dummy columns with zero variance (all zeros) across `X_train`. Under these conditions, parametric models (OLS) cannot estimate valid coefficients ($\beta$), and decision trees cannot establish meaningful split criteria.
+  Under strict group partitioning, holdout album families exist exclusively within `X_test`. Applying One-Hot Encoding directly on `album_family` generates dummy columns with zero variance (all zeros) across `X_train`. Under these conditions, parametric models (OLS) cannot estimate valid coefficients ($\beta$), and decision trees cannot establish meaningful split criteria on zero-variance training columns.
 
   To preserve the album family essence without categorical breakdown, continuous features were utilized as generalized numeric proxies:
   * `release_year`: Encodes the chronological era and historical production context of each album family.
   * `track_number`: Captures sequential curation, structural placement, and album pacing.
   * `duration_ms`: Represents compositional scale and track length.
 
-### 4. Feature Standardization & Multicollinearity Management
-Following partitioning, Z-score standardization was fitted strictly on X_train and applied to transform X_test. Empirical correlation analysis revealed severe linear dependency between `energy` and `loudness` (r = 0.80). To prevent coefficient destabilization, `energy` was omitted exclusively from the OLS baseline (`taylor_baseline.csv`), whereas it was safely retained within tree architectures (`taylor_improved.csv`) which naturally tolerate collinear inputs.
+### 4. Multicollinearity Diagnostic & Matrix Pruning (Figure 3)
+
+Empirical correlation analysis revealed severe linear dependency between `energy` and `loudness` (*r* = 0.80). To prevent coefficient variance inflation and destabilization in linear modeling, `energy` was omitted exclusively from the OLS baseline feature matrix (`taylor_baseline.csv`). Conversely, `energy` was retained within the feature matrix for tree-based architectures (`taylor_improved.csv`), as non-parametric tree ensembles naturally tolerate collinear inputs and exploit non-linear interactions.
+
+### 5. Leak-Free Feature Standardization
+
+To ensure numerical stability across gradient-based and distance-sensitive algorithms while strictly guarding against data leakage, $Z$-score standardization (`StandardScaler`) was fitted exclusively on `X_train`. The learned scaling parameters (mean and standard deviation) were subsequently used to transform `X_test`.
 
 ---
 

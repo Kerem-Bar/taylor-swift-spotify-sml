@@ -81,7 +81,7 @@ This distinction established two dedicated modeling matrices:
 
 ### 5. Leak-Free Feature Standardization
 
-Because raw features span vastly different numerical scales (e.g., `duration_ms` in hundreds of thousands versus audio features bounded between 0 and 1), standardizing features is essential to ensure stable OLS coefficient estimation and uniform feature weighting. To strictly prevent data leakage, $Z$-score standardization (`StandardScaler`) was fitted exclusively on `X_train`, and the resulting parameters (mean and standard deviation) were subsequently applied to transform `X_test`.
+Raw features span vastly different numerical scales (e.g., `duration_ms` in hundreds of thousands versus audio features bounded between 0 and 1), thus standardizing features is essential to ensure stable OLS coefficient estimation and uniform feature weighting. To strictly prevent data leakage, $Z$-score standardization (`StandardScaler`) was fitted exclusively on `X_train`, and the resulting parameters (mean and standard deviation) were subsequently applied to transform `X_test`.
 
 ---
 

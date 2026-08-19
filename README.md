@@ -71,15 +71,9 @@ The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under
   * `track_number`: Captures sequential curation, structural placement, and album pacing.
   * `duration_ms`: Represents compositional scale and track length.
 
-### 4. Multicollinearity Diagnostic & Empirical Feature Pruning (Figure 3)
 
-To address potential variance inflation and high correlation among acoustic predictors (notably between `energy` and `loudness`, r = 0.80), the baseline OLS regression was empirically evaluated both with and without `energy`. Removing `energy` yielded a slight improvement in out-of-sample performance and stabilized coefficient estimation. Consequently, `energy` was excluded from the linear baseline while retained for tree ensemble architectures, which naturally handle collinear inputs and non-linear interactions.
 
-This distinction established two dedicated modeling matrices:
-* `taylor_baseline.csv`: Excludes `energy` for baseline linear regression benchmarking.
-* `taylor_improved.csv`: Retains the complete feature space for tree ensemble modeling.
-
-### 5. Leak-Free Feature Standardization
+### 4. Leak-Free Feature Standardization
 
 Following the dataset split, Z-score standardization (`StandardScaler`) was applied across the modeling pipeline to align features with vastly different scales (such as `duration_ms` versus audio metrics bounded between 0 and 1). To strictly prevent data leakage, the scaler was fitted exclusively on `X_train`, and then used to transform both `X_train` and `X_test`.
 

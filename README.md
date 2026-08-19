@@ -120,7 +120,7 @@ Expanding algorithmic capacity to non-linear tree ensembles failed to resolve th
 
 Across both parametric and non-parametric architectures, applying rigid assumptions to skewed feature spaces produced out-of-sample prediction errors where Residual Sum of Squares strictly exceeded Total Sum of Squares (SSres > SStot). This structural limitation caused all evaluated models to collapse below zero (Test R² < 0), performing worse than a naive benchmark predicting the mean of `y_test`.
 
----
+
 
 
 

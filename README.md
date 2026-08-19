@@ -101,23 +101,23 @@ Across the three core regression architectures, four experimental specifications
 | **Gradient Boosting Regressor** | Full 12 Features | 3.2835 | 10.7190 | 0.9636 | -0.1238 |
 ---
 
-## 🔍 Diagnostic Analysis: The Predictive R² Collapse
+### 🔍 Failure Diagnosis & Empirical Breakdown
 
-Regardless of algorithmic complexity, all modeled architectures hit a rigid predictive ceiling on unseen eras, converging to a Test RMSE around 10.7 and negative R² values (R² < 0).
+#### 1. Linear Model Diagnosis: Rigid Acoustic Rules & Chronological Distortion (Figure 3)
 
-### 1. Linear Coefficient Breakdown & Rigid Acoustic Rules (Figure 3)
-Evaluating the learned weights of the stabilized OLS model revealed that sparse right-hand tails in asymmetric training predictors exerted extreme statistical leverage:
-* **The Positive Acousticness Rule (+1.24 coefficient):** The model falsely equated high acoustic density with guaranteed commercial success. In X_test, this rule collapsed due to internal polarization: frontline acoustic hits achieved peak popularity (77–78 at acousticness 0.77–0.92), whereas deep acoustic cuts with near-absolute acousticness (0.964) collapsed to low streaming traction (popularity: 43).
-* **The Negative Liveness Rule (-0.72 coefficient):** The model penalized elevated liveness scores. However, studio pop productions with arena-style reverb registered high liveness (0.32–0.38) while maintaining peak popularity (71–80), whereas actual live sessions (liveness: 0.791) yielded low platform traction (popularity: 54).
+The out-of-sample breakdown of the OLS baseline demonstrates that a uniform acoustic formula for popularity does not exist across a multi-era catalog:
+* **The Flawed Acousticness Rule (+1.2395):** The model established a rigid positive assumption equating high acoustic density with commercial success. While this rule held true for prominent frontline hits (popularity 77–78 at acousticness 0.77–0.92), it collapsed on deeper acoustic cuts where near-absolute acousticness (0.964) dropped to commercial lows (popularity 43), exposing internal catalog polarization.
+* **The Flawed Liveness Rule (-0.7238):** The fixed negative penalty failed to distinguish maximalist studio productions (which registered elevated liveness 0.32–0.38 due to layered arena reverberation yet achieved peak popularity 71–80) from raw live sessions (liveness 0.791, popularity 54).
+* **Over-Indexed Chronology (`release_year` = +12.2020):** Driven by a massive positive coefficient of +12.2020 assigned to `release_year`, the model severely penalized earlier releases of sonically identical tracks, creating artificial valuation gaps between the 2014 original and 2023 re-recording of *1989*.
 
-### 2. The Chronological Trap & Predictive Variance Collapse (Figure 4 & Figure 5)
-Both tree ensemble models fell into an extreme chronological trap. Rather than mapping localized acoustic structures, top-level branch splits allowed `release_year` to dominate architectural utility, capturing **70.4% importance weight in Random Forest** and **69.6% in Gradient Boosting** (Figure 4).
+#### 2. Tree Ensemble Diagnosis: The Chronological Trap & Predictive Variance Collapse (Figures 4 & 5)
 
-This reliance triggered a total **Predictive Variance Collapse** (Figure 5), flattening genuine empirical standard deviations into static, era-specific predictions:
-* **folklore (2020):** Actual popularity standard deviation = 11.23 -> Predicted standard deviation = 0.53 (RF) and 2.71 (GB).
-* **evermore (2020):** Actual popularity standard deviation = 5.44 -> Predicted standard deviation = 0.46 (RF) and 2.60 (GB).
-* **1989 (2023 Re-recording):** Actual popularity standard deviation = 5.96 -> Predicted standard deviation = 1.24 (RF) and 3.29 (GB).
+Expanding algorithmic capacity to non-linear tree ensembles failed to resolve this predictive ceiling due to two structural mechanics:
+* **The Chronological Trap:** `release_year` completely dominated tree splitting hierarchies, capturing **70.4% feature importance in Random Forest** and **69.6% in Gradient Boosting** (with all remaining features failing to clear an 8% threshold). Mirroring the linear baseline, the ensembles operated as macro-historical binning systems rather than musical estimators, splitting identically produced tracks based strictly on calendar year (2014 vs. 2023).
+* **Predictive Variance Collapse:** By prioritizing chronological bins over acoustic nuance, the models compressed empirical popularity variance into near-static predictions. The actual popularity standard deviations across test albums (`folklore` σ = 11.23, `evermore` σ = 3.13–5.44, `1989` σ = 5.96) collapsed to narrow predicted spreads of σ = 0.45–1.24 in Random Forest and σ = 2.46–3.29 in Gradient Boosting.
 
+**Summary of Empirical Breakdown:**  
+Across both parametric and non-parametric architectures, applying rigid assumptions to skewed feature spaces produced out-of-sample prediction errors where Residual Sum of Squares strictly exceeded Total Sum of Squares (SSres > SStot). This structural limitation caused all evaluated models to collapse below zero (Test R² < 0), performing worse than a naive benchmark predicting the mean of `y_test`.
 ---
 
 ## 💡 Key Conclusions & Future Work

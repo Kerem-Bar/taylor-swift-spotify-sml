@@ -75,12 +75,12 @@ Following the dataset split, Z-score standardization (`StandardScaler`) was appl
 
 ### 🔍 Multicollinearity Diagnostics & Energy Sensitivity Analysis
 
-To assess potential variance inflation and high correlation among acoustic predictors, specifically between `energy` and `loudness`, the parametric Ordinary Least Squares (OLS) baseline was estimated under two specifications:
+Empirical evaluation via Pearson correlation identified a severe linear dependency between `energy` and `loudness` ($r = 0.80$). To isolate variance inflation and stabilize Ordinary Least Squares (OLS) estimation, the parametric baseline was evaluated under two distinct specifications:
 
-1. **Linear Regression (Full):** Incorporating all 12 acoustic and structural predictors (Includes `energy`).
-2. **Linear Regression (Stabilized):** Isolating the impact of collinearity by omitting the `energy` parameter (Excludes `energy`).
+* **Linear Regression (Full):** Incorporates all 12 acoustic and structural predictors (includes `energy`).
+* **Linear Regression (Stabilized):** Excludes the `energy` feature to resolve collinearity and stabilize parameter estimation.
 
-The stabilized OLS specification demonstrated slightly better test performance and more stable coefficient estimates, establishing it as the primary linear baseline for comparison against the non-parametric tree ensembles (Random Forest and Gradient Boosting).
+The stabilized OLS specification demonstrated superior test generalization and coefficient stability, establishing it as the definitive linear baseline benchmark against the tree ensembles (Random Forest and Gradient Boosting).
 
 ### 🏆 Empirical Benchmark Results & Specification Comparison
 

@@ -1,6 +1,14 @@
-# <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="30" height="30" valign="middle"> Predicting Spotify Track Popularity: Regression Modeling of Audio and Structural Features - A Case Study of Taylor Swift
+# <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="30" height="30" valign="middle"> Predicting Spotify Track Popularity: Regression Modeling of Audio and Structural Features — A Case Study of Taylor Swift
 
 An empirical Supervised Machine Learning (SML) research pipeline developing predictive regression architectures to forecast track popularity from combined acoustic-structural features and assessing their broader industry generalizability. This repository benchmarks parametric Ordinary Least Squares (OLS) Linear Regression against non-parametric tree ensembles (Random Forest and Gradient Boosting Regressors).
+
+![](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)
+![](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![](https://img.shields.io/badge/Statsmodels-OLS_Regression-4C566A?style=flat)
+![](https://img.shields.io/badge/Pandas-Feature_Engineering-150458?style=flat&logo=pandas&logoColor=white)
+![](https://img.shields.io/badge/Project-Completed-44cc11?style=flat)
+
+## 📌 Project Overview & Feature Architecture
 ## 📌 Project Overview & Feature Architecture
 
 Traditional music popularity forecasting frequently falls into an "Acoustic Isolation Trap", predicting commercial success strictly from raw audio signals while ignoring chronological and structural album context. To bridge this empirical gap, this study formulates track popularity forecasting (*Y* ∈ [0, 100]) as a supervised machine learning regression task over Taylor Swift's extensive discography (*N* = 579), utilizing her diverse two-decade career and stylistic shifts as an optimal case study.

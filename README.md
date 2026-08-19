@@ -60,16 +60,8 @@ The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under
 
 ### 3. Chronological Feature Extraction & Categorical Dummy Substitution
 
-* **Temporal Feature Extraction (`release_date` → `release_year`):**
-  To represent chronological progression numerically, `release_year` was extracted from raw `release_date` strings as an integer feature.
-
-* **Capturing Album-Family Context via Continuous Proxies:**
-  Under strict group partitioning, holdout album families exist exclusively within `X_test`. Applying One-Hot Encoding directly on `album_family` generates dummy columns with zero variance (all zeros) across `X_train`. Under these conditions, parametric models (OLS) cannot estimate valid coefficients (β), and decision trees cannot establish meaningful split criteria on zero-variance training columns.
-
-  To preserve the album family essence without categorical breakdown, continuous features were utilized as generalized numeric proxies:
-  * `release_year`: Encodes the chronological era and historical production context of each album family.
-  * `track_number`: Captures sequential curation, structural placement, and album pacing.
-  * `duration_ms`: Represents compositional scale and track length.
+* **Temporal Feature Extraction (`release_date` → `release_year`):** Extracted four-digit calendar years from raw date strings to represent chronological progression as a continuous integer feature.
+* **Continuous Proxies over Categorical Dummies:** Applying One-Hot Encoding directly to `album_family` under group partitioning creates zero-variance dummy columns in `X_train` (all zeros), preventing valid OLS coefficient estimation and tree splits. To preserve album context without categorical breakdown, continuous structural features (`release_year`, `track_number`, and `duration_ms`) were utilized as numeric proxies for era, album pacing, and compositional scale.
 
 
 

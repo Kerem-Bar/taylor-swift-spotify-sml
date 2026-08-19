@@ -88,7 +88,7 @@ To assess potential variance inflation and high correlation among acoustic predi
 1. **Linear Regression (Full):** Incorporating all 12 acoustic and structural predictors (Includes `energy`).
 2. **Linear Regression (Stabilized):** Isolating the impact of collinearity by omitting the `energy` parameter (Excludes `energy`).
 
-Consequently, the stabilized OLS specification demonstrated superior parameter stability and generalization, establishing it as the winning linear benchmark against the non-parametric tree ensembles (Random Forest and Gradient Boosting).
+The stabilized OLS specification demonstrated slightly better test performance and more stable coefficient estimates, establishing it as the primary linear baseline for comparison against the non-parametric tree ensembles (Random Forest and Gradient Boosting).
 
 ### 🏆 Empirical Benchmark Results & Specification Comparison
 

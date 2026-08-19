@@ -92,7 +92,7 @@ The stabilized OLS specification demonstrated slightly better test performance a
 
 ### 🏆 Empirical Benchmark Results & Specification Comparison
 
-Across the three core regression architectures, four experimental specifications were evaluated across identical partition splits (`X_train` vs. `X_test`). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to prevent severe training data over-memorization.
+Across the three core regression architectures, four experimental specifications were evaluated across identical partition splits (`X_train` vs. `X_test`). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to control model complexity and mitigate overfitting.
 | Model Architecture | Feature Configuration | Train RMSE | Test RMSE | Train R² | Test R² |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Linear Regression (Full)** | Full 12 Features | 11.4240 | 10.8603 | 0.5595 | -0.1536 |

@@ -103,7 +103,7 @@ Across the three core regression architectures, four experimental specifications
 
 ## 🔍 Diagnostic Analysis: The Predictive R² Collapse
 
-Regardless of algorithmic complexity, all modeled architectures hit a rigid predictive ceiling on unseen eras, converging to a Test RMSE around 10.7 and negative R² values (R² < 0). A negative R² mathematically indicates that the model's residual sum of squares exceeds the total sum of squares around the sample mean, performing worse than a naive benchmark predicting the mean of `y_test`.
+Regardless of algorithmic complexity, all modeled architectures hit a rigid predictive ceiling on unseen eras, converging to a Test RMSE around 10.7 and negative R² values (R² < 0).
 
 ### 1. Linear Coefficient Breakdown & Rigid Acoustic Rules (Figure 3)
 Evaluating the learned weights of the stabilized OLS model revealed that sparse right-hand tails in asymmetric training predictors exerted extreme statistical leverage:

@@ -176,7 +176,7 @@ The project follows a two-stage modular execution architecture:
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git](https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git)
+git clone https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git
 
 # 2. Stage 1: Data preprocessing & Figures 1-2
 python Taylor_swift_smlproject.py

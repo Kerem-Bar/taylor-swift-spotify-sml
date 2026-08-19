@@ -9,7 +9,6 @@ An empirical Supervised Machine Learning (SML) research pipeline developing pred
 ![](https://img.shields.io/badge/Project-Completed-44cc11?style=flat)
 
 ## 📌 Project Overview & Feature Architecture
-## 📌 Project Overview & Feature Architecture
 
 Traditional music popularity forecasting frequently falls into an "Acoustic Isolation Trap", predicting commercial success strictly from raw audio signals while ignoring chronological and structural album context. To bridge this empirical gap, this study formulates track popularity forecasting (*Y* ∈ [0, 100]) as a supervised machine learning regression task over Taylor Swift's extensive discography (*N* = 579), utilizing her diverse two-decade career and stylistic shifts as an optimal case study.
 

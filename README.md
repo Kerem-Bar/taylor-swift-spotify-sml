@@ -167,21 +167,21 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 ## 🚀 How to Execute the Pipeline
 
+For detailed execution paths, dependencies, and environment configuration, refer to the included `Code & Data Execution Guide.pdf`.
+
 The project follows a two-stage modular execution architecture:
 
-* **Stage 1 - Exploratory Lifecycle & Preprocessing (`Taylor_swift_smlproject.py`):** Ingests the raw Spotify dataset (`taylor_swift_spotify.csv`), executes outlier filtering and feature engineering, exports `taylor_baseline.csv` and `taylor_improved.csv`, and generates exploratory visualizations (**Figures 1 & 2**).
-* **Stage 2 - Benchmark & Evaluation (`winning_models_sml2.py`):** Ingests the preprocessed CSVs, trains the final benchmark models (OLS, Random Forest, Gradient Boosting), outputs performance metrics, and generates diagnostic evaluation plots (**Figures 3, 4, & 5**).
+* **Stage 1 — Exploratory Lifecycle & Preprocessing (`Taylor_swift_smlproject.py`):** Ingests the raw Spotify dataset (`taylor_swift_spotify.csv`), executes outlier filtering and feature engineering, exports `taylor_baseline.csv` and `taylor_improved.csv`, and generates exploratory visualizations (**Figures 1 & 2**).
+* **Stage 2 — Benchmark & Evaluation (`winning_models_sml2.py`):** Ingests the preprocessed CSVs, trains the final benchmark models (OLS, Random Forest, Gradient Boosting), outputs performance metrics, and generates diagnostic evaluation plots (**Figures 3, 4, & 5**).
 
 ```bash
 # 1. Clone the repository
 git clone [https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git](https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git)
 
-# 2. Stage 1: Execute Full Lifecycle, Generate Datasets & Figures 1-2
-# (Processes raw 'taylor_swift_spotify.csv' -> exports preprocessed CSVs + saves Figure1 & Figure2)
+# 2. Stage 1: Data preprocessing & Figures 1-2
 python Taylor_swift_smlproject.py
 
-# 3. Stage 2: Train Production Models & Reproduce Diagnostic Figures 3-5
-# (Consumes 'taylor_baseline.csv' & 'taylor_improved.csv' -> evaluates winning models + saves Figures 3, 4, & 5)
+# 3. Stage 2: Model training & Figures 3-5
 python winning_models_sml2.py
 ```
 

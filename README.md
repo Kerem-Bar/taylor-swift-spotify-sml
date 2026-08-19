@@ -124,18 +124,21 @@ Across both parametric and non-parametric architectures, applying rigid assumpti
 
 
 
-## 💡 Key Conclusions & Future Work
+---
 
-Based on empirical evaluations, both research questions yielded a definitive **negative conclusion**:
+## 🎯 Key Conclusions & Future Work
 
-* **RQ1 Conclusion (Negative):** Individual song popularity cannot be predicted using acoustic-conceptual feature matrices alone. Non-parametric complexity cannot rescue a framework when engineered features evaluate complex artistic progression through a rigid chronological lens.
-* **RQ2 Conclusion (Negative):** The predictive framework cannot generalize across the broader music industry. The learned logic functions as a specialized career tracker tied strictly to Taylor Swift's unique streaming timeline and catalog replication milestones.
+Based on empirical evaluations across the catalog, both research questions yielded a definitive negative outcome:
+
+* **RQ1 Conclusion (Negative):** Individual song popularity cannot be predicted using acoustic and conceptual feature matrices alone. Even advanced non-parametric tree ensembles cannot overcome structural limitations when the engineered feature space attempts to evaluate nuanced artistic progression through a rigid chronological lens.
+* **RQ2 Conclusion (Negative):** The predictive framework cannot generalize across the broader music industry. Because the models heavily over-indexed on artist-specific chronology (`release_year`), the learned decision boundaries function strictly as a specialized historical tracker tied to Taylor Swift's unique career timeline and catalog re-recordings, making the architecture non-transferable to other artists.
 
 ### 🚀 Proposed Future Directions
-To overcome these structural boundaries while preserving catalog integrity, future iterations should implement two practical methodological adjustments:
-1. **Distribution-Based Preprocessing:** Apply a standard log(x+1) transformation exclusively to highly skewed, non-normal acoustic parameters (e.g., speechiness, instrumentalness) to stabilize training leverage and accommodate zero-value bounds.
-2. **Chronological Abstraction via External Exposure Proxies:** Replace the static, artist-specific `release_year` feature with dynamic, time-varying external metrics (e.g., media appearance frequencies, social media engagement volume, and tour scheduling intensity).
 
+To overcome these structural boundaries while preserving catalog integrity, future iterations should implement two practical methodological adjustments:
+
+* **Distribution-Based Preprocessing:** Apply a standard `log(x + 1)` transformation exclusively to highly skewed acoustic parameters (e.g., `speechiness`, `instrumentalness`) to stabilize training leverage and accommodate zero-value bounds.
+* **Chronological Abstraction via External Exposure Proxies:** Replace the static, artist-specific `release_year` feature with dynamic, time-varying external signals (such as media appearance frequencies, social media engagement volume, and tour scheduling intensity) to capture genuine promotional momentum without falling into the chronological trap.
 ---
 
 ## 📊 Visualizations Highlights

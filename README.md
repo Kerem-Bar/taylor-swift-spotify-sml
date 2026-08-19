@@ -129,8 +129,8 @@ Across all architectures, the models failed to achieve positive out-of-sample ge
 
 Based on empirical evaluations across the catalog, both research questions yielded a definitive negative outcome:
 
-* **RQ1 Conclusion (Negative) — Track Popularity Prediction:** Individual song popularity cannot be predicted using acoustic-conceptual feature matrices alone. Rather than learning true musical patterns, the models relied on `release_year` as a macro chronological shortcut, failing to evaluate out-of-sample eras and collapsing to negative predictive performance (R² < 0).
-* **RQ2 Conclusion (Negative) — Industry Generalizability:** The predictive framework cannot generalize across the broader music industry. Constrained by decision logic strictly tied to Taylor Swift's unique career timeline and catalog re-recording milestones, the architecture functions as an artist-specific career tracker rather than a transferable musical estimator.
+* **RQ1 Conclusion (Negative) - Track Popularity Prediction:** Individual song popularity cannot be predicted using acoustic-conceptual feature matrices alone. Rather than learning true musical patterns, the models relied on `release_year` as a macro chronological shortcut, failing to evaluate out-of-sample eras and collapsing to negative predictive performance (R² < 0).
+* **RQ2 Conclusion (Negative) - Industry Generalizability:** The predictive framework cannot generalize across the broader music industry. Constrained by decision logic strictly tied to Taylor Swift's unique career timeline and catalog re-recording milestones, the architecture functions as an artist-specific career tracker rather than a transferable musical estimator.
 
 ### 🚀 Proposed Future Directions
 

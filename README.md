@@ -3,8 +3,9 @@
 An empirical Supervised Machine Learning (SML) research pipeline developing predictive regression architectures to forecast track popularity from combined acoustic-structural features and assessing their broader industry generalizability. This repository benchmarks parametric Ordinary Least Squares (OLS) Linear Regression against non-parametric tree ensembles (Random Forest and Gradient Boosting Regressors).
 
 ![](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)
-![](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-F7931E?style=flat&logo=scikit-learn&logoColor=white)
 ![](https://img.shields.io/badge/Statsmodels-OLS_Regression-4C566A?style=flat)
+![](https://img.shields.io/badge/Scikit--Learn-Random_Forest-2E7D32?style=flat&logo=scikit-learn&logoColor=white)
+![](https://img.shields.io/badge/Scikit--Learn-Gradient_Boosting-0288D1?style=flat&logo=scikit-learn&logoColor=white)
 ![](https://img.shields.io/badge/Pandas-Feature_Engineering-150458?style=flat&logo=pandas&logoColor=white)
 ![](https://img.shields.io/badge/Project-Completed-44cc11?style=flat)
 

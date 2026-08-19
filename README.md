@@ -80,8 +80,7 @@ Empirical evaluation via Pearson correlation identified a severe linear dependen
 * **Linear Regression (Full):** Incorporates all 12 predictors (includes `energy`) to diagnose coefficient instability.
 * **Linear Regression (Stabilized):** Excludes `energy` to resolve collinearity and restore reliable slope estimation.
 
-The stabilized OLS specification demonstrated superior test generalization and coefficient stability, establishing it as the definitive linear baseline benchmark against the collinearity-invariant tree ensembles (Random Forest and Gradient Boosting).
-
+Omitting `energy` yielded slight out-of-sample improvements across both Test RMSE and Test R², establishing the stabilized configuration as the preferred linear baseline for benchmarking against the tree ensembles.
 ### 🏆 Empirical Benchmark Results & Specification Comparison
 
 Across the three core regression architectures, four experimental specifications were evaluated across identical partition splits (`X_train` vs. `X_test`). Hyperparameter tuning via grid search enforced a maximum tree depth boundary of 4 across tree ensembles to control model complexity and mitigate overfitting.

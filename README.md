@@ -33,20 +33,19 @@ The predictive framework models track popularity against an independent feature 
 
 ```text
 taylor-swift-spotify-sml/
-│
-├── Code & Data Execution Guide.pdf # Step-by-step Execution & Reproduction Guide
-├── Taylor_swift_smlproject.py       # Initial Data Science Lifecycle, Exploratory Baselines & CSV Export
-├── winning_models_sml2.py           # Final Production Script (OLS, Random Forest & Gradient Boosting)
-├── taylor_swift_spotify.csv         # Raw Spotify Dataset (582 records, 18 columns)
-├── taylor_baseline.csv              # Preprocessed Dataset tailored for OLS (11 features, N = 579)
-├── taylor_improved.csv              # Preprocessed Dataset tailored for Tree Ensembles (12 features, N = 579)
-├── SML final project Kerem Bar.pdf  # Comprehensive SML Academic Research Report
-├── Figure1.png                      # Boxplot Outlier Isolation for Target Variable Popularity
-├── Figure2.png                      # Song Popularity Distribution by Album Families
-├── Figure3.png                      # Standardized Linear Coefficient Weights
-├── Figure4.png                      # Feature Importance of Both Tree Ensemble Models
-├── Figure5.png                      # Empirical Evidence of Predictive Variance Collapse
-└── README.md                        # Detailed Repository Architecture & Research Findings
+│── Code & Data Execution Guide.pdf # Step-by-step Execution & Reproduction Guide
+│── taylor_swift_smlproject.py      # Initial Data Science Lifecycle, Exploratory Baselines & CSV Export
+│── winning_models_sml2.py          # Final Production Script (OLS, Random Forest & Gradient Boosting)
+│── taylor_swift_spotify.csv        # Raw Spotify Dataset (582 records, 18 columns)
+│── taylor_baseline.csv             # Preprocessed Dataset tailored for OLS (11 features, N = 579)
+│── taylor_improved.csv             # Preprocessed Dataset tailored for Tree Ensembles (12 features, N = 579)
+│── SML final project Kerem Bar.pdf # Comprehensive SML Academic Research Report
+│── Figure1.png                     # Boxplot Outlier Isolation for Target Variable Popularity
+│── Figure2.png                     # Song Popularity Distribution by Album Families
+│── Figure3.png                     # Standardized Linear Coefficient Weights
+│── Figure4.png                     # Feature Importance of Both Tree Ensemble Models
+│── Figure5.png                     # Empirical Evidence of Predictive Variance Collapse
+└── README.md                       # Detailed Repository Architecture & Research Findings
 ```
 ---
 

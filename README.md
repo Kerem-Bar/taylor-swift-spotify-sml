@@ -183,6 +183,7 @@ The project follows a two-stage modular execution architecture:
 **1. Clone the repository:**
 ```bash
 git clone https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git
+cd taylor-swift-spotify-sml
 ```
 
 **2. Stage 1 - Exploratory Lifecycle & Preprocessing:**  

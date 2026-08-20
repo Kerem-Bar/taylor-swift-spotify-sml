@@ -100,6 +100,8 @@ Across the three core regression architectures, four experimental specifications
 
 ## 🔍 Failure Diagnosis & Empirical Breakdown
 
+Across all evaluated architectures, the models failed to achieve positive out-of-sample generalization ($Test\ R^2 < 0$, where $SS_{res} > SS_{tot}$), performing worse than a naive baseline predicting the sample mean ($\bar{y}_{test}$). Detailed post-mortem diagnostics isolate the distinct failure mechanisms across both modeling paradigms:
+
 ### 1. Linear Model Diagnosis: Rigid Acoustic Rules & Chronological Distortion (Figure 3)
 
 The out-of-sample breakdown of the OLS baseline demonstrates that a uniform acoustic formula for popularity does not exist across a multi-era catalog:
@@ -112,20 +114,6 @@ The out-of-sample breakdown of the OLS baseline demonstrates that a uniform acou
 Expanding algorithmic capacity to non-linear tree ensembles failed to resolve this predictive ceiling due to two structural mechanics:
 * **The Chronological Trap:** `release_year` completely dominated tree splitting hierarchies, capturing 70.4% feature importance in Random Forest and 69.6% in Gradient Boosting (with all remaining features failing to clear an 8% threshold). Mirroring the linear baseline, the ensembles operated as macro-historical binning systems rather than musical estimators, splitting identically produced tracks based strictly on calendar year (2014 vs. 2023).
 * **Predictive Variance Collapse:** By prioritizing chronological bins over acoustic nuance, the models compressed true empirical variance into near-static predictions. Most notably on *folklore* (2020), an actual standard deviation of σ = 11.23 collapsed to a rigid predicted spread of just σ = 0.53 in Random Forest and σ = 2.71 in Gradient Boosting (Figure 5).
-### 📌 Summary of Empirical Breakdown
-
-Across all architectures, the models failed to achieve positive out-of-sample generalization (Test R² < 0, where SS_res > SS_tot), performing worse than a naive baseline predicting the sample mean (ȳ_test):
-
-* **Structural Feature Bottleneck:** Rather than capturing generalized acoustic patterns, all architectures over-indexed on macro-chronology (`release_year`), artificially penalizing earlier releases of sonically identical tracks.
-* **OLS Limitation:** Applying rigid global slopes across skewed training distributions generated distorted acoustic rules that failed out-of-sample.
-* **Tree Ensemble Limitation:** Splitting hierarchies prioritized temporal bins over acoustic signals, collapsing intra-album variance into flat, static predictions.
-
-
-
-
-
-
-
 
 ---
 

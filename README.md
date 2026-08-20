@@ -107,7 +107,7 @@ Across all evaluated architectures, the models failed to achieve positive out-of
 The out-of-sample breakdown of the OLS baseline demonstrates that a uniform acoustic formula for popularity does not exist across a multi-era catalog:
 * **The Flawed Acousticness Rule (+1.2395):** The model established a rigid positive assumption equating high acoustic density with commercial success. While this rule held true for prominent frontline hits (popularity 77–78 at acousticness 0.77–0.92), it collapsed on deeper acoustic cuts where near-absolute acousticness (0.964) dropped to commercial lows (popularity 43), exposing internal catalog polarization.
 * **The Flawed Liveness Rule (-0.7238):** The fixed negative penalty failed to distinguish maximalist studio productions (which registered elevated liveness 0.32–0.38 due to layered arena reverberation yet achieved peak popularity 71–80) from raw live sessions (liveness 0.791, popularity 54).
-* **Over-Indexed Chronology (`release_year` = +12.2020):** Driven by a massive positive coefficient of +12.2020 assigned to `release_year`, the model severely penalized earlier releases of sonically identical tracks, creating artificial valuation gaps between the 2014 original and 2023 re-recording of `1989`.
+* **Over-Indexed Chronology (`release_year` = +12.2020):** Driven by a massive positive coefficient of +12.2020 assigned to `release_year`, the model severely penalized earlier releases of sonically identical tracks, creating artificial valuation gaps between the 2014 original and 2023 re-recording of *1989*.
 
 ### 2. Tree Ensemble Diagnosis: The Chronological Trap & Predictive Variance Collapse (Figures 4 & 5)
 

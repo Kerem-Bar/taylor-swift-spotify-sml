@@ -112,7 +112,7 @@ The out-of-sample breakdown of the OLS baseline demonstrates that a uniform acou
 ### 2. Tree Ensemble Diagnosis: The Chronological Trap & Predictive Variance Collapse (Figures 4 & 5)
 
 Expanding algorithmic capacity to non-linear tree ensembles failed to resolve this predictive ceiling due to two structural mechanics:
-* **The Chronological Trap:** `release_year` completely dominated tree splitting hierarchies, capturing 70.4% feature importance in Random Forest and 69.6% in Gradient Boosting (with all remaining features failing to clear an 8% threshold). Mirroring the linear baseline, the ensembles operated as macro-historical binning systems rather than musical estimators, splitting identically produced tracks based strictly on calendar year (2014 vs. 2023).
+* **The Chronological Trap:** `release_year` completely dominated tree splitting hierarchies, capturing 70.4% feature importance in Random Forest and 69.6% in Gradient Boosting (with all remaining features failing to clear an 8% threshold). Mirroring the linear baseline, the ensembles operated as macro-historical binning systems rather than musical estimators, splitting identically produced tracks based strictly on calendar year (e.g., 2014 vs. 2023 in `1989`).
 * **Predictive Variance Collapse:** By prioritizing chronological bins over acoustic nuance, the models compressed true empirical variance into near-static predictions. Most notably on *folklore* (2020), an actual standard deviation of σ = 11.23 collapsed to a rigid predicted spread of just σ = 0.53 in Random Forest and σ = 2.71 in Gradient Boosting (Figure 5).
 
 ---

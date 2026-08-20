@@ -60,7 +60,7 @@ Exploratory IQR analysis on the raw dataset (*N* = 582) established a mathematic
 
 ### 2. Catalog Structuring & Leak-Free Group Partitioning (Figure 2)
 
-To resolve severe data leakage caused by sonically identical entries across catalog re-recordings and expanded editions, individual release titles were consolidated into unified `album_family` entities (for example, consolidating the original, deluxe, and re-recorded releases of *1989* under a single `1989` album family). 
+To resolve severe data leakage caused by sonically identical entries across catalog re-recordings and expanded editions, individual release titles were consolidated into unified `album_family` entities (for example, consolidating the 2014 original release, deluxe editions, and the 2023 *Taylor's Version* re-recording under a single *1989* album family). 
 
 The discography was partitioned using `scikit-learn`'s `GroupShuffleSplit` under an out-of-sample holdout strategy (80/20 train-test ratio). This guaranteed that entire unseen eras, comprising the `1989`, `folklore`, and `evermore` album families, were strictly isolated into `X_test`, ensuring the models were evaluated entirely on out-of-sample discographic contexts. This exact train-test partition (`X_train`, `X_test`, `y_train`, `y_test`) was held identical across all three benchmarked regression architectures to ensure strict comparative validity.
 

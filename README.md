@@ -187,13 +187,13 @@ cd taylor-swift-spotify-sml
 pip install pandas numpy scikit-learn matplotlib seaborn
 ```
 
-3. **Stage 1 — Exploratory Lifecycle & Preprocessing:**
+3. **Stage 1 - Exploratory Lifecycle & Preprocessing:**
 Ingests raw data (`taylor_swift_spotify.csv`), executes outlier filtering, exports preprocessed datasets, and generates visualizations:
 ```bash
 python taylor_swift_smlproject.py
 ```
 
-4. **Stage 2 — Benchmark Modeling & Diagnostics:**
+4. **Stage 2 - Benchmark Modeling & Diagnostics:**
 Trains regression models (OLS, Random Forest, Gradient Boosting), outputs performance metrics, and generates evaluation plots:
 ```bash
 python winning_models_sml2.py

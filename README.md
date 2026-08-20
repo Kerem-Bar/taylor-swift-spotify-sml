@@ -33,7 +33,7 @@ taylor-swift-spotify-sml/
 └── README.md                       # Detailed Repository Architecture & Research Findings
 ```
 ---
-## 🎛️ Feature Architecture & Taxonomy
+## 🎧 Feature Architecture & Taxonomy
 
 The predictive framework models track popularity against an independent feature matrix (*X*) of 12 numeric predictors partitioned into two functional categories:
 

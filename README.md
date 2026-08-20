@@ -174,28 +174,30 @@ To overcome these structural boundaries while preserving catalog integrity, futu
 
 ---
 
-## 🚀 How to Execute the Pipeline
+## 🚀 How to Run the Project
 
-For detailed execution paths, dependencies, and environment configuration, refer to the included `Code & Data Execution Guide.pdf`.
-
-The project follows a two-stage modular execution architecture:
-
-**1. Clone the repository:**
+1. **Clone the repository and enter the directory:**
 ```bash
 git clone https://github.com/Kerem-Bar/taylor-swift-spotify-sml.git
 cd taylor-swift-spotify-sml
 ```
 
-**2. Stage 1 - Exploratory Lifecycle & Preprocessing:**  
-Ingests the raw Spotify dataset (`taylor_swift_spotify.csv`), executes outlier filtering, exports preprocessed datasets (`taylor_baseline.csv` and `taylor_improved.csv`), and generates exploratory visualizations (**Figures 1 & 2**):
+2. **Install dependencies:**
 ```bash
-python Taylor_swift_smlproject.py
+pip install pandas numpy scikit-learn matplotlib seaborn
 ```
 
-**3. Stage 2 - Benchmark Modeling & Diagnostics:**  
-Ingests the preprocessed CSVs, trains winning regression models (OLS, Random Forest, Gradient Boosting), outputs performance metrics, and generates diagnostic evaluation plots (**Figures 3, 4, & 5**):
+3. **Stage 1 — Exploratory Lifecycle & Preprocessing:**
+Ingests raw data (`taylor_swift_spotify.csv`), executes outlier filtering, exports preprocessed datasets, and generates visualizations:
+```bash
+python taylor_swift_smlproject.py
+```
+
+4. **Stage 2 — Benchmark Modeling & Diagnostics:**
+Trains regression models (OLS, Random Forest, Gradient Boosting), outputs performance metrics, and generates evaluation plots:
 ```bash
 python winning_models_sml2.py
+
 ```
 
 

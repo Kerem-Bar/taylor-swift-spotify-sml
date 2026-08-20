@@ -100,7 +100,7 @@ Across the three core regression architectures, four experimental specifications
 
 ## 🔍 Failure Diagnosis & Empirical Breakdown
 
-Across all evaluated architectures, the models failed to achieve positive out-of-sample generalization ($Test\ R^2 < 0$, where $SS_{res} > SS_{tot}$), performing worse than a naive baseline predicting the sample mean ($\bar{y}_{test}$). Detailed post-mortem diagnostics isolate the distinct failure mechanisms across both modeling paradigms:
+Across all evaluated architectures, the models failed to achieve positive out-of-sample generalization (Test R² < 0, where SS_res > SS_tot), performing worse than a naive baseline predicting the sample mean (ȳ_test). Diagnostic evaluation isolates the distinct failure mechanisms across both modeling paradigms:
 
 ### 1. Linear Model Diagnosis: Rigid Acoustic Rules & Chronological Distortion (Figure 3)
 

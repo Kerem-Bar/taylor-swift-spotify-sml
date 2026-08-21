@@ -131,8 +131,8 @@ Based on empirical evaluations across the catalog, both research questions yield
 
 To overcome the predictive ceiling and structural boundaries identified in this study, future research should implement two practical methodological adjustments:
 
-* **Distribution-Based Preprocessing:** Retain symmetric, normally distributed acoustic variables in their original form while applying a standard $\log(x+1)$ transformation exclusively to highly skewed metrics (e.g., `speechiness`, `instrumentalness`, `liveness`). This accommodates zero-bounded values and prevents extreme distribution tails from distorting linear slopes.
-* **Chronological Abstraction via External Proxies:** Replace the static, artist-specific `release_year` feature with dynamic, external exposure metrics (e.g., media appearance frequencies, social media volume, and touring schedules). This abstracts the chronological dimension beyond Taylor Swift's specific career milestones and prevents models from treating release dates as a trivial historical shortcut.
+* **Distribution-Based Preprocessing:** Retain symmetric, normally distributed acoustic variables in their original form while applying a standard `log(x + 1)` transformation exclusively to highly skewed metrics (e.g., `speechiness`, `instrumentalness`, `liveness`). This accommodates zero-bounded values and prevents extreme distribution tails from distorting linear slopes.
+* **Chronological Abstraction via External Proxies:** Replace the static, artist-specific `release_year` predictor with dynamic external exposure metrics sourced beyond the Spotify API (e.g., media appearance frequencies, social media volume, and touring schedules). This abstracts the chronological dimension beyond Taylor Swift's specific career timeline and prevents models from treating calendar years as a superficial historical shortcut.
 ---
 
 ## 📊 Visualizations Highlights

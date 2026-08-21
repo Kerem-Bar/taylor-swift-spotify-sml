@@ -127,12 +127,16 @@ Based on empirical evaluations across the catalog, both research questions yield
 * **RQ1 Conclusion (Negative) - Track Popularity Prediction:** Individual song popularity cannot be predicted using acoustic-conceptual feature matrices alone. Rather than learning true musical patterns, the models relied on `release_year` as a macro chronological shortcut, failing to evaluate out-of-sample eras and collapsing to negative predictive performance (R² < 0).
 * **RQ2 Conclusion (Negative) - Industry Generalizability:** The predictive framework cannot generalize across the broader music industry. Constrained by decision logic strictly tied to Taylor Swift's unique career timeline and catalog re-recording milestones, the architecture functions as an artist-specific career tracker rather than a transferable musical estimator.
 
-### 🚀 Proposed Future Directions
+## 🚀 Future Methodological Recommendations
 
-To overcome these structural boundaries while preserving catalog integrity, future iterations should implement two practical methodological adjustments:
+To overcome the architectural and feature ceilings identified in this study, future iterations should transition from isolated Spotify acoustic metrics to a multimodal predictive framework:
 
-* **Distribution-Based Preprocessing:** Apply a standard `log(x + 1)` transformation exclusively to highly skewed acoustic parameters (e.g., `speechiness`, `instrumentalness`) to stabilize training leverage and accommodate zero-value bounds.
-* **Chronological Abstraction via External Exposure Proxies:** Replace the static, artist-specific `release_year` feature with dynamic, time-varying external signals (such as media appearance frequencies, social media engagement volume, and tour scheduling intensity) to capture promotional momentum without falling into the chronological trap.
+* **Non-Linear Distribution Normalization:** Apply log transformations ($\log(x+1)$) or Box-Cox transformations to heavily right-skewed acoustic metrics (`acousticness`, `liveness`, `speechiness`) prior to linear estimation. This compresses extreme leverage points, mitigates tail distortions, and stabilizes parametric slope estimation.
+* **Intra-Catalog Relative Standardization:** Instead of predicting absolute global Spotify popularity (0–100), transform the target into localized within-album Z-scores ($z = \frac{x - \mu}{\sigma}$). This decouples song evaluation from catalog-level temporal hype and evaluates relative track prominence within each era.
+* **External Feature Enrichment Beyond Spotify:** The Spotify Web API provides acoustic and track-level metadata, but lacks external commercial context. High-performing industry models must incorporate multi-source feature layers, such as:
+  * **Marketing & Promotion Signals:** Lead-single status, music video releases, and algorithmic playlist placements (e.g., *Today's Top Hits*).
+  * **Touring & Cultural Exposure:** Setlist inclusion on major stadium tours (*The Eras Tour*) and viral social media momentum.
+  * **Chart & Airplay Dynamics:** Historical Billboard performance and terrestrial radio airplay points.
 ---
 
 ## 📊 Visualizations Highlights

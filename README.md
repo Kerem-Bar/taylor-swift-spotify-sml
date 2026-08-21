@@ -129,14 +129,10 @@ Based on empirical evaluations across the catalog, both research questions yield
 
 ## 🚀 Future Methodological Recommendations
 
-To overcome the architectural and feature ceilings identified in this study, future iterations should transition from isolated Spotify acoustic metrics to a multimodal predictive framework:
+To overcome the predictive ceiling and structural boundaries identified in this study, future research should implement two practical methodological adjustments:
 
-* **Non-Linear Distribution Normalization:** Apply log transformations ($\log(x+1)$) or Box-Cox transformations to heavily right-skewed acoustic metrics (`acousticness`, `liveness`, `speechiness`) prior to linear estimation. This compresses extreme leverage points, mitigates tail distortions, and stabilizes parametric slope estimation.
-* **Intra-Catalog Relative Standardization:** Instead of predicting absolute global Spotify popularity (0–100), transform the target into localized within-album Z-scores ($z = \frac{x - \mu}{\sigma}$). This decouples song evaluation from catalog-level temporal hype and evaluates relative track prominence within each era.
-* **External Feature Enrichment Beyond Spotify:** The Spotify Web API provides acoustic and track-level metadata, but lacks external commercial context. High-performing industry models must incorporate multi-source feature layers, such as:
-  * **Marketing & Promotion Signals:** Lead-single status, music video releases, and algorithmic playlist placements (e.g., *Today's Top Hits*).
-  * **Touring & Cultural Exposure:** Setlist inclusion on major stadium tours (*The Eras Tour*) and viral social media momentum.
-  * **Chart & Airplay Dynamics:** Historical Billboard performance and terrestrial radio airplay points.
+* **Distribution-Based Preprocessing:** Retain symmetric, normally distributed acoustic variables in their original form while applying a standard $\log(x+1)$ transformation exclusively to highly skewed metrics (e.g., `speechiness`, `instrumentalness`, `liveness`). This accommodates zero-bounded values and prevents extreme distribution tails from distorting linear slopes.
+* **Chronological Abstraction via External Proxies:** Replace the static, artist-specific `release_year` feature with dynamic, external exposure metrics (e.g., media appearance frequencies, social media volume, and touring schedules). This abstracts the chronological dimension beyond Taylor Swift's specific career milestones and prevents models from treating release dates as a trivial historical shortcut.
 ---
 
 ## 📊 Visualizations Highlights

@@ -104,11 +104,13 @@ Across all evaluated architectures, the models failed to achieve positive out-of
 
 ### 1. Linear Model Diagnosis: Rigid Acoustic Rules & Chronological Distortion (Figure 3)
 
-The out-of-sample breakdown of the OLS baseline demonstrates that fitting a global linear slope across unnormalized, heavily right-skewed acoustic distributions created high statistical leverage, forcing the model into rigid, ungeneralizable rules:
+The out-of-sample breakdown of the OLS baseline stems from two distinct structural failures:
 
-* **The Flawed Acousticness Rule (+1.2395):** The model established a rigid positive assumption equating high acoustic density with commercial success. While this held true for prominent frontline hits (popularity 77–78 at acousticness 0.77–0.92), it collapsed on deeper acoustic cuts where near-absolute acousticness (0.964) dropped to commercial lows (popularity 43), exposing internal catalog polarization.
-* **The Flawed Liveness Rule (-0.7238):** The fixed negative penalty failed to distinguish maximalist studio productions (which registered elevated liveness 0.32–0.38 due to layered arena reverberation yet achieved peak popularity 71–80) from raw live sessions (liveness 0.791, popularity 54).
-* **Over-Indexed Chronology (`release_year` = +12.2020):** Driven by a massive positive coefficient of +12.2020 assigned to `release_year`, the model severely penalized earlier releases of sonically identical tracks, creating artificial valuation gaps between the 2014 original release and the 2023 *Taylor's Version* re-recording within the `1989` album family.
+* **Rigid Acoustic Rules via Skewed Distributions:** Fitting a global linear slope across unnormalized, heavily right-skewed acoustic features exerted high statistical leverage, forcing the model to construct rigid, ungeneralizable rules:
+  * **The Flawed Acousticness Rule (+1.2395):** The model established a rigid positive assumption equating high acoustic density with commercial success. While this held true for prominent frontline hits (popularity 77–78 at acousticness 0.77–0.92), it collapsed on deeper acoustic cuts where near-absolute acousticness (0.964) dropped to commercial lows (popularity 43), exposing internal catalog polarization.
+  * **The Flawed Liveness Rule (-0.7238):** The fixed negative penalty failed to distinguish maximalist studio productions (which registered elevated liveness 0.32–0.38 due to layered arena reverberation yet achieved peak popularity 71–80) from raw live sessions (liveness 0.791, popularity 54).
+
+* **Over-Indexed Chronology (`release_year` = +12.2020):** Driven by a massive positive coefficient of +12.2020 assigned to `release_year`, the framework disproportionately prioritized chronological release dates over musical characteristics. This severely penalized earlier releases of sonically identical tracks, creating artificial valuation gaps between the 2014 original release and the 2023 *Taylor's Version* re-recording within the `1989` album family.
 
 ### 2. Tree Ensemble Diagnosis: The Chronological Trap & Predictive Variance Collapse (Figures 4 & 5)
 

@@ -129,8 +129,7 @@ Based on empirical evaluations across the catalog, both research questions yield
 * **RQ1 Conclusion (Negative) - Track Popularity Prediction:** Individual song popularity cannot be predicted using acoustic-conceptual feature matrices alone. Rather than learning true musical patterns, the models relied on `release_year` as a macro chronological shortcut, failing to evaluate out-of-sample eras and collapsing to negative predictive performance (R² < 0).
 * **RQ2 Conclusion (Negative) - Industry Generalizability:** The predictive framework cannot generalize across the broader music industry. Constrained by decision logic strictly tied to Taylor Swift's unique career timeline and catalog re-recording milestones, the architecture functions as an artist-specific career tracker rather than a transferable musical estimator.
 
-## 🚀 Future Methodological Recommendations
-
+### 🚀 Future Methodological Recommendations
 To overcome the predictive ceiling and structural boundaries identified in this study, future research should implement two practical methodological adjustments:
 
 * **Distribution-Based Preprocessing:** Retain symmetric, normally distributed acoustic variables in their original form while applying a standard `log(x + 1)` transformation exclusively to highly skewed metrics (e.g., `speechiness`, `instrumentalness`, `liveness`). This accommodates zero-bounded values and prevents extreme distribution tails from distorting linear slopes.
